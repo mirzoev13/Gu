@@ -1,0 +1,800 @@
+/*Макет: https://www.figma.com/file/HgaryGJ6gqQPfaA8pcF9Oz/%D0%9A%D1%83%D1%80%D1%81%D0%BE%D0%B2%D0%B0%D1%8F-%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD?type=design&node-id=2%3A2&mode=design&t=K6c20xEdFUTIqIzl-1*/
+
+
+
+/*Переменные, работая с которыми мы в дальнейшем можем изменять цветую схему сайта*/
+:root{
+    --color-black: #100E0E;
+    --color-white: #fff; 
+    --color-gray: #141313;
+}
+
+
+
+
+/*Обнуление стилей и использование подключенного шрифта*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montagu Slab', sans-serif;
+    scroll-behavior: smooth;
+}
+/*Обнуление стилей у ссылок. Установим по стандарту черный цвет и уберем подчеркивание*/
+a{
+    text-decoration: none;
+    color: var(--color-black);
+}
+/*Обнуление стилей у списков. Установим по стандарту отсутствие точек*/
+ul{
+    list-style-type: none;
+}
+
+/*Контейнер дающий отступы с двух сторон*/
+.container{
+    margin: 0 5%;
+}
+
+/*Шапка сайта*/
+
+/*Задаем всей шапке фон, убираем повторы и выравниваем по центру*/
+header {
+    background-image: url(../img/bg1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; /* Задаем высоту блока равную 100% высоты видимой области */
+}
+
+
+
+
+/*Линия разделения контента от шапки сайта*/
+header nav{
+    border-bottom: 5px solid var(--color-white);
+    transition: all .4s ease-in;
+}
+
+.fixed{
+    position: fixed;
+    top: 0;
+    background-color: var(--color-gray);
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: all .4s ease-in;
+}
+
+/*Выравнивание меню по центру и придание отступов*/
+header nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 0;
+}
+
+/*Стили для ссылок меню*/
+header nav ul li a{
+    position: relative;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+
+/*Анимация подчеркивания при наведении курсора*/
+header nav ul li a::after{
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-white);
+    content: "";
+    transition: width 0.3s ease-in-out;
+}
+
+/*Анимация подчеркивания при наведении курсора*/
+header nav ul li:not(:first-child) a:hover::after,
+header nav ul li:not(:first-child) a:focus::after{
+    width: 100%;
+}
+
+
+/*Стили для блока с номером и расписанием*/
+header nav ul li .contact{
+    display: flex;
+    align-items: baseline
+
+}
+/*Придание стилей иконке трубки*/
+header nav ul li .contact i{
+    color: #fff;
+    font-size: 24px;
+}
+
+header nav ul li .contact .number p{
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+}
+
+.header{
+    display: none;
+}
+
+.header .nav2{
+    display: flex;
+}
+
+.header .burger{
+    display: flex;
+
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+
+.header .burger span{
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background-color: var(--color-white);
+}
+
+.header .burger::before,
+.header .burger::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-white);
+    transition: all .3s ease 0s;
+}
+
+
+.header .burger::before{
+    top: 0;
+}
+.header .burger::after{
+    bottom: 0;
+}
+
+.header .burger.active span{
+    transform: scale(0);
+}
+
+.header .burger.active::before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.header .burger.active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+
+
+
+
+/*Контент хедера*/
+
+header .main_header{
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+
+header .main_header .main_text_header{
+    display: grid;
+    row-gap: 20px;
+}
+/*Придание белого цвета всем нужным элементам*/
+header .main_header .main_text_header h1,
+header .main_header .main_text_header h2,
+header .main_header .main_text_header p{
+    color: var(--color-white);
+}
+
+
+/*Размер шрифта для каждого элемента*/
+header .main_header .main_text_header h1{
+    font-size: 700%;
+    text-transform: uppercase;
+}
+
+header .main_header .main_text_header h2{
+    font-size: 400%;
+}
+
+header .main_header .main_text_header p{
+    font-size: 250%;
+}
+/*Работа с элементами формы*/
+header .main_header .main_text_header form{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 3%;
+    column-gap: 93px;
+    margin: 0 auto;
+}
+
+/*Работа с текстовыми полями*/
+header .main_header .main_text_header form input{
+    border-radius: 70px;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff66;
+    color: #fff;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-size: 30px;
+    transition: all 0.3s ease;
+}
+
+/*Работа с placeholder. Цвет и жирность*/
+header .main_header .main_text_header form input::placeholder{
+    color: #fff;
+    font-weight: 700;
+}
+
+/*Анимация текстовых полей*/
+header .main_header .main_text_header form input:focus{
+    outline: none;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 14px 10px #06060666;;
+    transition: all 0.3s ease;
+}
+
+/*Работа с кнопкой отправки*/
+header .main_header .main_text_header form button{
+    border-radius: 70px;
+    border: none;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #ffffffdf;
+    cursor: pointer;
+    color: var(--color-black);
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px 20px;
+    transition: all .3s ease;
+}
+/*Анимация кнопки*/
+header .main_header .main_text_header form button:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 14px 10px rgba(255, 255, 255, 0.637);
+    transition: all .3s ease;
+}
+
+
+/* Основной контент страницы */
+
+/* Секция групповых программ */
+
+
+/* Фон второй секции */
+.group_learn{
+    position: relative;
+    background: url(../img/bg2.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 10% 0% 10% 0%;
+    background-repeat: no-repeat;
+    /*Белое обрезание*/
+
+    background-color: var(--color-white);
+}
+/* Затемнение фона */
+.group_learn::before{
+    position: absolute;
+    display: block;
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Убираем затемнение у всех остальных элементов кроме фона, т.е все что лежит в контейнере и имеет отступ */
+.group_learn > .container{
+    position: relative;
+}
+
+/* Заголовки секции */
+.group_learn .heading_group{
+    display: grid;
+    row-gap: 25px;
+    text-align: center;
+
+}
+
+.group_learn .heading_group h2,
+.group_learn .heading_group h3{
+    color: var(--color-white);
+}
+
+.group_learn .heading_group h2{
+    font-size: 700%;
+}
+
+.group_learn .heading_group h3{
+    font-size: 48px;
+}
+/* Применение полноценной сетки, выстраивая 4 элемента в ряд и даем каждой карточке по 1 фракции*/
+.group_learn .card_group{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    column-gap: 58px;
+    padding-top: 80px;
+}
+
+/* Задаем четкие размеры картинки у каждой карточки и выравнимаем по центру по средствам -  margin: 0 auto;*/
+
+.group_learn .card_group .img_card{
+    width: 170px;
+    height: 165px;
+    margin: 0 auto;
+}
+
+
+/* Говорим, что картинки должны полностью принимать заданные ранее размеры*/
+.group_learn .card_group .img_card img{
+    width: 100%;
+    height: 100%;
+}
+
+/* Работа с текстом карточки, display grid здесь, чтобы мы могли раздвинуть элементы на 50px друг от другаа*/
+
+.group_learn .card_group .text_card{
+    display: grid;
+    padding-top: 26px;
+    row-gap: 50px;
+    text-align: center;
+}
+
+.group_learn .card_group .text_card h4,
+.group_learn .card_group .text_card p{
+    color: var(--color-white);
+}
+
+.group_learn .card_group .text_card h4{
+    font-size: 36px;
+}
+
+/* Ограничиваем текст параграфа на заданную ширину согласно макету*/
+.group_learn .card_group .text_card p{
+    max-width: 422px;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 auto;
+}
+
+
+/*Секция тренеров*/
+
+.trainer{
+    background-color: var(--color-black);
+    padding: 57px 0 100px 0;
+}
+
+.trainer .heading_trainer{
+    color: var(--color-white);
+    font-size: 600%;
+    text-align: center;
+}
+
+
+.trainer .card_trainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    column-gap: 87px;
+    padding-top: 84px;
+}
+
+.trainer .card_trainer .card{
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.trainer .card_trainer .card .img_card img{
+    width: 100%;
+    object-fit: cover;
+    border: 1px solid var(--color-white);
+}
+
+.trainer .card_trainer .card .text_card{
+    display: flex;
+    flex-direction: column;
+    padding-top: 33px;
+    row-gap: 16px;
+}
+
+.trainer .card_trainer .card .text_card .sub_text{
+    display: grid;
+    row-gap: 80px;
+}
+
+.trainer .card_trainer .card .text_card h3,
+.trainer .card_trainer .card .text_card .sub_text p,
+.trainer .card_trainer .card .text_card .sub_text ul li{
+    color: var(--color-white);
+}
+
+.trainer .card_trainer .card .text_card h3{
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+.trainer .card_trainer .card .text_card .sub_text p,
+.trainer .card_trainer .card .text_card .sub_text li{
+    font-size: 20px;
+}
+
+
+.trainer .card_trainer .card .text_card .sub_text ul li{
+    list-style-image: url(../img/line.svg);
+}
+
+
+.club{
+    background-color: var(--color-black);
+    padding: 57px 0 100px 0;
+}
+
+.club .heading_trainer{
+    color: var(--color-white);
+    font-size: 400%;
+    text-align: center;
+}
+
+.club .club_card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 131px;
+    justify-items: center;
+}
+
+.club .club_card .card_club{
+    display: grid;
+    row-gap: 69px;
+    text-align: center;
+    border-radius: 40px;
+    padding: 30px;
+    transition: all .4s ease-in;
+}
+
+.club .club_card .card_club:first-child{
+    background: linear-gradient(180deg, rgba(7, 181, 255, 0.75) 0%, rgba(20, 153, 249, 0.30) 100%);
+}
+
+.club .club_card .card_club:nth-child(2){
+    background: linear-gradient(180deg, #0085FF 0%, rgba(0, 160, 251, 0.22) 100%);
+}
+
+.club .club_card .card_club:last-child{
+    background: linear-gradient(180deg, #1AD6FF 0%, rgba(12, 50, 72, 0.83) 100%);
+}
+
+
+.club .club_card .card_club h3{
+    font-size: 250%;
+}
+
+.club .club_card .card_club p{
+    font-size: 200%;
+}
+
+.club .club_card .card_club .button a{
+    background-color: #000;
+    color: var(--color-white);
+    padding: 16px 14px;
+    font-size: 200%;
+    border-radius: 20px;
+}
+
+.club_active{
+    transform: translateY(-20px);
+    box-shadow: 29px 34px 22px -10px rgba(34, 60, 80, 0.2);
+    transition: all .4s ease-in;
+}
+
+
+.adress_club .adress_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.adress_club .adress_container .yandex_card > iframe{
+    width: 960px;
+    height: 723px;
+}
+
+.adress_club .adress_container .adress{
+    position: relative;
+    width: 100%;
+    background-image: url(../img/bg3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.adress_club .adress_container .adress::before{
+    position: absolute;
+    display: block;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.adress_club .adress_container .adress .text_adress{
+    position: relative;
+    padding: 74px 70px;
+}
+
+.adress_club .adress_container .adress .text_adress p{
+    font-size: 48px;
+    max-width: 700px;
+    font-weight: 700;
+    color: #fff;
+}
+
+footer{
+    background-color: var(--color-black);
+    padding: 15px 0;
+    border-top: 12px solid #767676;
+}
+
+footer .footer_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer_container ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer_container ul:last-child{
+    column-gap: 30px;
+}
+
+footer .footer_container ul a.heading{
+    font-size: 200%;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+
+.scroll{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 5%;
+    height: 10%;
+    animation-duration: 3s;
+    animation-name: arrow;
+}
+
+@keyframes arrow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
+
+.scroll img{
+    width: 100%;
+    height: 100%;
+    rotate: 180deg;
+}
+
+.active_scroll{
+    display: block !important;
+}
+
+.open{
+    display: flex !important;
+}
+
+
+@media screen and (max-width: 375px) {
+    #header .nav{
+        display: none;
+    }
+
+    .header{
+        display: block;
+        padding-top: 10px;
+        height: 120px;
+    }
+
+    .header .burger{
+        position: fixed;
+        z-index: 2;
+        top: 20px;
+        right: 20px;
+        margin-top: 30px;
+    }
+
+    .header > .container .logo{
+        display: block;
+        position: fixed;
+        z-index: 2;
+    }
+
+    .header > .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header > .container .nav2{
+        display: none;
+        flex-direction: column; 
+        padding-top: 20px;
+        position: fixed;
+        overflow-y: auto;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-gray);
+        z-index: 1;
+        transition: all .4s ease-in;
+        animation-name: Burger;
+        animation-duration: 1s;
+    }
+
+    @keyframes Burger {
+        from {
+            opacity: 0;
+            margin-right: 100%;
+        }
+        to {
+            opacity: 1;
+            margin-right: 0;
+        }
+    }
+
+    .header > .container .nav2 ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15%;
+        row-gap: 40px;
+    }
+
+
+    header .main_header .main_text_header h1{
+        font-size: 200%;
+    }
+
+    header .main_header .main_text_header h2{
+        font-size: 150%;
+    }
+
+    header .main_header .main_text_header p{
+        font-size: 150%;
+    }
+
+    header .main_header{
+        padding-top: 0;
+    }
+
+
+    header .main_header .main_text_header form{
+        row-gap: 10px;
+        grid-template-columns: 1fr;
+    }
+
+    header .main_header .main_text_header form input{
+        width: 100%;
+        padding: 15px;
+        font-size: 20px;
+    }
+
+
+    .group_learn .heading_group h2{
+        font-size:300%;
+    }
+
+    .group_learn .heading_group h3{
+        font-size: 200%;
+    }
+
+    .group_learn .card_group{
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .trainer .heading_trainer{
+        font-size: 300%;
+    }
+
+    .trainer .card_trainer{
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .trainer .card_trainer .card .text_card{
+        text-align: center;
+    }
+
+    .trainer .card_trainer .card .text_card .sub_text ul li{
+        list-style-image: none;
+    }
+
+    .club .heading_trainer{
+        display: flex;
+        flex-direction: column;
+        font-size: 200%;
+        row-gap: 40px;
+    }
+
+    .club .club_card{
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+
+    .adress_club .adress_container .yandex_card {
+        display: none;
+    }
+
+    .adress_club .adress_container .adress .text_adress p{
+        font-size: 150%;
+        text-align: center;
+    }
+
+
+    footer .footer_container{
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    footer .footer_container ul{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .scroll{
+        display: none !important;
+    }
+
+
+}
+
+
+
+

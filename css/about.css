@@ -1,0 +1,462 @@
+:root {
+    --color-black: #100E0E;
+    --color-white: #fff;
+    --color-gray: #141313;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montagu Slab', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*Обнуление стилей у ссылок. Установим по стандарту черный цвет и уберем подчеркивание*/
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+/*Обнуление стилей у списков. Установим по стандарту отсутствие точек*/
+ul {
+    list-style-type: none;
+}
+
+/*Контейнер дающий отступы с двух сторон*/
+.container {
+    margin: 0 5%;
+}
+
+
+/*Шапка сайта*/
+
+/*Линия разделения контента от шапки сайта*/
+header nav {
+    border-bottom: 5px solid var(--color-white);
+    background-color: var(--color-gray);
+    transition: all .4s ease-in;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    background-color: var(--color-black);
+    left: 0;
+    right: 0;
+    z-index: 1;
+    transition: all .4s ease-in;
+}
+
+/*Выравнивание меню по центру и придание отступов*/
+header nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 0;
+}
+
+/*Стили для ссылок меню*/
+header nav ul li a {
+    position: relative;
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+
+/*Анимация подчеркивания при наведении курсора*/
+header nav ul li a::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-white);
+    content: "";
+    transition: width 0.3s ease-in-out;
+}
+
+/*Анимация подчеркивания при наведении курсора*/
+header nav ul li:not(:first-child) a:hover::after,
+header nav ul li:not(:first-child) a:focus::after {
+    width: 100%;
+}
+
+
+/*Стили для блока с номером и расписанием*/
+header nav ul li .contact {
+    display: flex;
+    align-items: baseline
+}
+
+/*Придание стилей иконке трубки*/
+header nav ul li .contact i {
+    color: #fff;
+    font-size: 24px;
+}
+
+header nav ul li .contact .number p {
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+}
+
+.header{
+    display: none;
+}
+
+.header .nav2{
+    display: flex;
+}
+
+.header .burger{
+    display: flex;
+
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+
+.header .burger span{
+    height: 2px;
+    width: 100%;
+    transform: scale(1);
+    background-color: var(--color-white);
+}
+
+.header .burger::before,
+.header .burger::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: var(--color-white);
+    transition: all .3s ease 0s;
+}
+
+
+.header .burger::before{
+    top: 0;
+}
+.header .burger::after{
+    bottom: 0;
+}
+
+.header .burger.active span{
+    transform: scale(0);
+}
+
+.header .burger.active::before{
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+.header .burger.active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+
+/*Контент*/
+
+.concept_club {
+    display: grid;
+    padding: 5% 0;
+    background-color: var(--color-gray);
+}
+
+.concept_club .heading_group h2 {
+    font-size: 500%;
+    color: var(--color-white);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.concept_club .content_club {
+    display: flex;
+    justify-content: space-between;
+    padding: 5% 0;
+}
+
+.concept_club .content_club .text_club{
+    display: flex;
+    flex-direction: column;
+    gap: 59px;
+}
+
+.concept_club .content_club .text_club h3{
+    font-size: 250%;
+    color: var(--color-white);
+}
+
+.concept_club .content_club .text_club p{
+    font-size: 200%;
+    color: var(--color-white);
+    line-height: 60px;
+    max-width: 630px;
+}
+
+
+.concept_club .content_club .slider img{
+    border-radius: 20px;
+}
+
+.achiv{
+    background-color: var(--color-gray);
+}
+
+.achiv .heading_group h2{
+    font-size: 500%;
+    color: var(--color-white);
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.achiv .acviv_card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 5% 0;
+    column-gap: 108px;
+    row-gap: 110px;
+    justify-items: center;
+}
+
+.achiv .acviv_card .card{
+    display: grid;
+    row-gap: 20px;
+}
+
+.achiv .acviv_card .card .img_container{
+    position: relative;
+}
+
+.achiv .acviv_card .card .img_container p{
+    position: absolute;
+    max-width: 250px;
+    bottom:18px;
+    text-transform: uppercase;
+    font-size: 24px;
+    color: var(--color-white);
+    font-weight: 700;
+    left: 5%;
+}
+
+.achiv .acviv_card .card .img_container > img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.achiv .acviv_card .card .text_container{
+    font-size: 24px;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.cart{
+    background-color: var(--color-gray);
+    padding: 10% 0;
+}
+
+.cart .yandex_card iframe{
+    width: 100%;
+    height: 575px;
+}
+
+
+/*Контент*/
+
+
+
+
+
+
+footer {
+    background-color: var(--color-gray);
+    padding: 15px 0;
+    border-top: 12px solid #767676;
+}
+
+footer .footer_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer_container ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .footer_container ul:last-child {
+    column-gap: 30px;
+}
+
+footer .footer_container ul a.heading {
+    font-size: 200%;
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.scroll{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 5%;
+    height: 10%;
+    animation-duration: 3s;
+    animation-name: arrow;
+}
+
+@keyframes arrow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
+}
+
+.scroll img{
+    width: 100%;
+    height: 100%;
+    rotate: 180deg;
+}
+
+.active_scroll{
+    display: block !important;
+}
+
+.open{
+    display: flex !important;
+}
+
+
+@media screen and (max-width: 375px) {
+    #header .nav{
+        display: none;
+    }
+
+    .header{
+        display: block;
+        height: 50px;
+        background-color: var(--color-black);
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-top: 10px;
+        height: 120px;
+    }
+
+    .header .burger{
+        position: fixed;
+        z-index: 2;
+        top: 20px;
+        right: 20px;
+        margin-top: 30px;
+    }
+
+    .header > .container .logo{
+        display: block;
+        position: fixed;
+        z-index: 2;
+    }
+
+    .header > .container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header > .container .nav2{
+        display: none;
+        flex-direction: column; 
+        padding-top: 20px;
+        position: fixed;
+        overflow-y: auto;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--color-gray);
+        z-index: 1;
+        transition: all .4s ease-in;
+        animation-name: Burger;
+        animation-duration: 1s;
+    }
+
+    @keyframes Burger {
+        from {
+            opacity: 0;
+            margin-right: 100%;
+        }
+        to {
+            opacity: 1;
+            margin-right: 0;
+        }
+    }
+
+    .header > .container .nav2 ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15%;
+        row-gap: 40px;
+    }
+
+    .concept_club .heading_group h2{
+        font-size: 300%;
+        padding-top: 15%;
+    }
+
+    .concept_club .content_club{
+        flex-direction: column;
+    }
+
+    .concept_club .content_club .slider img{
+        display: none;
+    }
+
+    .achiv .heading_group h2{
+        font-size: 300%;
+    }
+
+    .achiv .acviv_card{
+        grid-template-columns: 1fr;
+    }
+    .scroll img{
+        width: 50px;
+        height: 50px;
+    }
+
+    footer .footer_container{
+        flex-direction: column;
+        row-gap: 50px;
+    }
+
+    footer .footer_container ul{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+
+    .scroll{
+        display: none !important;
+    }
+
+
+}

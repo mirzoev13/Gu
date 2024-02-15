@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!--Мета-теги-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Подключение шрифтов через Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Подключение иконки сайта, формата ico-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!--Подключение файла стилей style.css в папке css-->
+    <link rel="stylesheet" href="css/fontello.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Название сайта для отображение того в браузере-->
+    <title>Iron GYM</title>
+</head>
+
+<body>
+    <!--Специальный тэг header для обозначения шапки сайта-->
+    <header id="header">
+        <!--Специальный тэг nav для обозначения меню сайта-->
+        <nav class="nav">
+            <!--Применение контейнера-->
+            <div class="container">
+                <div class="logo">
+                    <!--Меню сайта-->
+                    <ul>
+                        <li class="logo"><a href="index.html"><img src="img/logo.svg" alt="logo.svg"></a></li>
+                        <li><a href="about.html">o iron gym</a></li>
+                        <li><a href="gallery.html">Фотогалерея</a></li>
+                        <li><a href="buycart.html">Купить карту</a></li>
+                        <li><a href="program.html">Наши программы</a></li>
+                        <!--Элемент меню для связи-->
+                        <li>
+                            <div class="contact">
+                                <i class="icon-phone"></i>
+                                <div class="number">
+                                    <p>+7 (4912) 55-95-94</p>
+                                    <a href="table.html">расписание</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html"><img src="img/logo.svg" alt="logo.svg"></a>
+                </div>
+                <nav class="nav2">
+                    <ul>
+                        <li><a href="about.html">o iron gym</a></li>
+                        <li><a href="gallery.html">Фотогалерея</a></li>
+                        <li><a href="buycart.html">Купить карту</a></li>
+                        <li><a href="program.html">Наши программы</a></li>
+                        <!--Элемент меню для связи-->
+                        <li>
+                            <div class="contact">
+                                <i class="icon-phone"></i>
+                                <div class="number">
+                                    <p>+7 (4912) 55-95-94</p>
+                                    <a href="table.html">расписание</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="burger">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <!--Контент хедера-->
+        <div class="main_header">
+            <div class="container">
+                <!--Весь текст используемый в шапке-->
+                <div class="main_text_header">
+                    <h1>Прими вызов!</h1>
+                    <h2>Забери свой абонемент уже сегодня</h2>
+                    <p>Укажи контакты и мы перезвоним в течение 15 минут</p>
+                    <!--Форма связи-->
+                    <form action="">
+                        <input placeholder="Телефон" type="text">
+                        <input placeholder="Имя" type="text">
+                        <button type="submit">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!--Специальный тэг main для обозначения основного контента сайта-->
+    <main>
+        <!--Специальный тэг section для обозначения множества секции внутри одного main-->
+        <section class="group_learn">
+            <div class="container">
+                <!--Заголовки секции-->
+                <div class="heading_group">
+                    <h2>Групповые программы</h2>
+                    <h3>Оборудованные всем необходимым зоны для занятий любыми видами тренировок</h3>
+                </div>
+                <!--div содержащий в себе карточки(4 шт)-->
+                <div class="card_group">
+                    <div class="card">
+                        <div class="img_card">
+                            <img src="img/Treadmill.svg" alt="">
+                        </div>
+                        <div class="text_card">
+                            <h4>Функциональные</h4>
+                            <p>Силовые уроки,направленные на укрепление мышц живота, спины и ягодиц.</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img_card">
+                            <img src="img/Dumbbell.svg" alt="">
+                        </div>
+                        <div class="text_card">
+                            <h4>Силовые</h4>
+                            <p>Тренировки c отягощением направленные на развитие мышц. </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img_card">
+                            <img src="img/glove.svg" alt="">
+                        </div>
+                        <div class="text_card">
+                            <h4>Box body</h4>
+                            <p>Групповые программы, направленные на совершенствование тела, обретение новых навыков.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img_card">
+                            <img src="img/human.svg" alt="">
+                        </div>
+                        <div class="text_card">
+                            <h4>Танцевальные</h4>
+                            <p>Тренировки направленные на общее оздоровление организма и различных групп мышц по
+                                отдельности.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trainer">
+            <div class="container">
+                <!--Заголовки секции-->
+                <div class="heading_trainer">
+                    <h2>Наши тренеры</h2>
+                </div>
+
+                <!--div содержащий в себе карточки(4 шт)-->
+                <div class="card_trainer">
+
+                    <div class="card">
+                        <div class="img_card">
+                            <img src="img/trainer1.jpg" alt="trainer1.jpg ">
+                        </div>
+                        <div class="text_card">
+                            <h3>Югий Шапутинов</h3>
+                            <div class="sub_text">
+                                <p>
+                                    Мастер спорта по<br>
+                                    пауэрлифтингу, персональный<br>
+                                    тренер и руководитель секции<br>
+                                    «Арта пауэрлифтинг»
+                                </p>
+                                <ul>
+                                    <p>Направления работы:</p>
+                                    <li>Силовой тренинг</li>
+                                    <li>Общефизическая и<br>
+                                        специальная подготовка спортсменовне<br>
+                                        силовых видов спорта</li>
+                                    <li>Составление программ тренировок</li>
+                                    <li>Коррекция фигуры</li>
+                                    <li>Диетологическое сопровождение</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="img_card">
+                            <img src="img/trainer2.jpg" alt="trainer1.jpg ">
+                        </div>
+                        <div class="text_card">
+                            <h3>Витя Хабиби</h3>
+                            <div class="sub_text">
+                                <ul>
+                                    <li>Управляющий фитнес-центра</li>
+                                    <li>Кандидат в мастера спорта по
+                                        <br>боксу
+                                    </li>
+                                    <li> Кандидат в мастера спорта по<br>
+                                        спортивной борьбе</li>
+                                    <li>Профессиональный боксер</li>
+                                </ul>
+                                <ul>
+                                    <p>Направления работы:</p>
+                                    <li>Персональные и групповые
+                                        <br>тренировки по боксу
+                                    </li>
+                                    <li>Снижение веса</li>
+                                    <li>Набор мышечной массы</li>
+                                    <li>Составление индивидуального<br>
+                                        плана тренировок и питания</li>
+                                    <li>ЛФК и реабилитация после<br>травм</li>
+                                    <li>Коррекция осанки</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card">
+                        <div class="img_card">
+                            <img src="img/trainer3.jpg" alt="trainer1.jpg ">
+                        </div>
+                        <div class="text_card">
+                            <h3>Кристинс Голубочкин</h3>
+                            <div class="sub_text">
+                                <ul>
+                                    <li>Старший тренер фитнес<br>
+                                        центра</li>
+                                    <li>Сертифицированный<br>
+                                        персональный тренер (FPA)</li>
+                                    <li>Кандидат в мастера спорта<br>
+                                        по жиму лёжа (WRPF)</li>
+                                </ul>
+                                <ul>
+                                    <p>Направления работы:</p>
+                                    <li>Снижение веса</li>
+                                    <li>Набор мышечной массы</li>
+                                    <li>Составление<br>
+                                        индивидуального плана<br>
+                                        тренировок и питания</li>
+                                    <li>Диетологическое<br>
+                                        сопровождение</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <a href="#header" class="scroll">
+            <img src="img/arrow_up.gif" alt="">
+        </a>
+        <section class="club">
+            <div class="container">
+                <div class="heading_trainer">
+                    <h2>Приобрети клубную карту</h2>
+                    <h3>Гибкая система абонементов</h3>
+                </div>
+
+                <div class="club_card">
+
+                    <div class="card_club ">
+                        <h3>Дневная карта</h3>
+                        <p>Посещение клуба<br>с 7:00 до 17:00</p>
+                        <div class="button">
+                            <a href="#">Оформить</a>
+                        </div>
+                    </div>
+
+                    <div class="card_club club_active">
+                        <h3>Безлимитная карта</h3>
+                        <p>Полный доступ <br> с 7:00 до 24:00</p>
+                        <div class="button">
+                            <a href="#">Оформить</a>
+                        </div>
+                    </div>
+
+                    <div class="card_club">
+                        <h3>Разовое посещение</h3>
+                        <p>Неограниченное<br>
+                            посещение клуба<br>
+                            с 7:00 до 24:00</p>
+                        <div class="button">
+                            <a href="#">Оформить</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="adress_club">
+            <div class="adress_container">
+                <div class="yandex_card">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2310.5789688074865!2d39.709895727330505!3d54.6114094226831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z0J_Qu9C-0YnQsNC00YwgNTAt0LvQtdGC0LjRjyDQntC60YLRj9Cx0YDRjywgMtGBMQ!5e0!3m2!1sru!2sru!4v1701405071703!5m2!1sru!2sru"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="adress">
+                    <div class="text_adress">
+                        <p>
+                            Площадь 50-летия
+                            Октября, 2с1, ТЦ «Ёж» (4-й этаж)
+                            Телефон 8 (4912) 52-15-16
+                            Почта: irongym@mail.ru
+                            Режим работы фитнес-центра:
+                            пн-пт 7:00–00:00
+                            сб-вс 9:00–22:00
+                            Режим работы отдела продаж:
+                            пн-вс 10:00 – 22:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer_container">
+                <ul>
+                    <li><a href="#header"><img src="img/logo.svg" alt=""></a></li>
+                    <li><a class="heading" href="#header">2023 IRON GYM</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#"><img src="img/whatsapp.svg" alt="#"></a></li>
+                    <li><a href="#"><img src="img/telegram.svg" alt="#"></a></li>
+                    <li><a href="#"><img src="img/youtube.svg" alt="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+    <a href="#header" class="scroll">
+        <img src="img/arrow_up.gif" alt="">
+    </a>
+    <!--Подключение файла JavaScript в папке js-->
+    <script src="js/app.js"></script>
+    <script src="js/burger.js"></script>
+
+</body>
+
+</html>
